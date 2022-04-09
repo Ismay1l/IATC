@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let myLabel = UILabel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -16,8 +18,7 @@ class ViewController: UIViewController {
         print("Height: \(self.view.frame.height)")
         print("Width: \(self.view.frame.width)")
         
-        let myLabel = UILabel()
-        myLabel.frame = CGRect(x: 170, y: 400, width: 80, height: 30)
+        myLabel.frame = CGRect.init(x: 170, y: 400, width: 100, height: 30)
         myLabel.text = "Test1"
         myLabel.textColor = .orange
         myLabel.backgroundColor = .lightGray
@@ -25,8 +26,17 @@ class ViewController: UIViewController {
         myLabel.font = .boldSystemFont(ofSize: 30)
         self.view.addSubview(myLabel)
         
-       
-        
+        let myButton = UIButton()
+        myButton.setTitle("Save", for: UIControl.State.normal)
+        myButton.setTitleColor(UIColor.blue, for: UIControl.State.normal)
+        myButton.frame = CGRect.init(x: 185, y: 500, width: 100, height: 50)
+        myButton.backgroundColor = .black
+        myButton.addTarget(self, action: #selector(saveAction), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(myButton)
+    }
+    
+    @objc func saveAction () {
+        myLabel.text = "Saved"
     }
     
     override func viewWillAppear(_ animated: Bool) {
