@@ -10,6 +10,8 @@ import UIKit
 class ViewController: UIViewController {
 
     let myLabel = UILabel()
+    
+    let font : UIFont = UIFont.systemFont(ofSize: 30)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +25,16 @@ class ViewController: UIViewController {
         myLabel.textColor = .orange
         myLabel.backgroundColor = .lightGray
         myLabel.textAlignment = .center
-        myLabel.font = .boldSystemFont(ofSize: 30)
+        myLabel.font = font
         self.view.addSubview(myLabel)
         
         let myButton = UIButton()
         myButton.setTitle("Save", for: UIControl.State.normal)
         myButton.setTitleColor(UIColor.blue, for: UIControl.State.normal)
-        myButton.frame = CGRect.init(x: 185, y: 500, width: 100, height: 50)
-        myButton.backgroundColor = .black
+        myButton.frame = CGRect.init(x: 170, y: 500, width: 100, height: 50)
+        myButton.backgroundColor = .gray
         myButton.addTarget(self, action: #selector(saveAction), for: UIControl.Event.touchUpInside)
+        myButton.titleLabel?.font = font
         self.view.addSubview(myButton)
     }
     
