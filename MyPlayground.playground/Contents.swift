@@ -19,12 +19,9 @@ print(randomNumber/4)
 print("Task4\n")
 let randomnumbers: Int = Int.random(in: 0...100)
 let a = randomnumbers
-if a < 22 {
-    print("\(a) is smaller than 22")
-}
-if a > 22 {
-    print("\(a) is bigger than 22")
-}
+print("\(a) - 22 = \(a-22)")
+print("\(a) + 22 = \(a+22)")
+
 print("Reminder of division of \(a) by 2 is \(a%2)")
 
 print("Task5\n")
